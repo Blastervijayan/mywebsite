@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate P.M.Thirumalai Thamizharasan | Premium Legal Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0B132B;
+            --navy-light: #1C2541;
+            --gold: #D4AF37;
+            --gold-hover: #F1D302;
+            --white: #FFFFFF;
+            --text: #333333;
+            --bg-light: #f9f9f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        header {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(11, 19, 43, 0.95);
+            padding: 20px 50px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; transition: 0.3s;
+        }
+        .logo { color: var(--gold); font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .logo img { height: 45px; width: auto; object-fit: contain; }
+        .logo span { color: var(--white); font-size: 18px; font-weight: 400;}
+        
+        nav { display: flex; align-items: center; gap: 20px; }
+        nav a { color: var(--white); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.95rem; }
+        nav a:hover { color: var(--gold); }
+
+        /* Buttons */
+        .btn-gold {
+            background: var(--gold); color: var(--navy) !important;
+            padding: 10px 24px; border-radius: 4px; text-decoration: none;
+            font-weight: 600; border: none; cursor: pointer; transition: 0.3s;
+            display: inline-block; text-align: center;
+        }
+        .btn-gold:hover { background: var(--gold-hover); transform: translateY(-2px); }
+        
+        .btn-white {
+            background: var(--white); color: var(--navy) !important;
+            padding: 10px 24px; border-radius: 4px; text-decoration: none;
+            font-weight: 600; transition: 0.3s; display: inline-block;
+        }
+        .btn-white:hover { background: #e0e0e0; transform: translateY(-2px); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(11, 19, 43, 0.85), rgba(11, 19, 43, 0.85)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80') center/cover;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: var(--white); padding: 0 20px;
+        }
+        .hero-content { max-width: 800px; animation: fadeIn 1.5s ease; }
+        .hero h1 { font-size: 3.5rem; color: var(--gold); margin-bottom: 10px; line-height: 1.2; }
+        .hero h3 { font-size: 1.5rem; color: var(--white); margin-bottom: 20px; font-weight: 300; letter-spacing: 1px;}
+        .hero p { font-size: 1.1rem; margin-bottom: 30px; color: #ddd; }
+        .cta-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* About Section */
+        .about { padding: 100px 20px; background: var(--white); display: flex; justify-content: center; }
+        .about-container { max-width: 1100px; display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .about-image { flex: 1; min-width: 300px; position: relative; }
+        .about-image img { width: 100%; border-radius: 4px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .about-image::after { content: ''; position: absolute; bottom: -15px; right: -15px; width: 100%; height: 100%; border: 3px solid var(--gold); z-index: -1; border-radius: 4px; }
+        
+        .about-text { flex: 1.5; min-width: 300px; }
+        .about-text h2 { font-size: 2.5rem; color: var(--navy); margin-bottom: 20px; position: relative; padding-bottom: 15px; }
+        .about-text h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60px; height: 3px; background: var(--gold); }
+        .about-text p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: #555; }
+
+        /* Services Grid */
+        .services { padding: 100px 20px; text-align: center; background: var(--bg-light); }
+        .services h2 { font-size: 2.5rem; color: var(--navy); margin-bottom: 15px; }
+        .services > p { color: #666; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
+        .card { background: var(--white); color: var(--text); padding: 40px 30px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 4px solid var(--navy-light); transition: all 0.3s; text-align: left; }
+        .card:hover { transform: translateY(-10px); border-top-color: var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .card h3 { color: var(--navy); margin-bottom: 15px; font-size: 1.4rem; }
+        .card p { line-height: 1.6; color: #666; font-size: 0.95rem; }
+
+        /* Galleries (Photos & Videos) */
+        .gallery-section { padding: 80px 20px; text-align: center; color: var(--white); }
+        .bg-navy { background: var(--navy); }
+        .bg-navy-light { background: var(--navy-light); }
+        
+        .gallery-section h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 40px; }
+        
+        .slider-wrapper { position: relative; max-width: 1100px; margin: auto; display: flex; align-items: center; }
+        .slider {
+            display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+            scroll-behavior: smooth; scrollbar-width: none; padding-bottom: 10px; width: 100%;
+        }
+        .slider::-webkit-scrollbar { display: none; }
+        
+        .slide-item {
+            flex: 0 0 calc(33.333% - 14px); 
+            scroll-snap-align: start; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 2px solid transparent; transition: 0.3s;
+        }
+        .slide-item:hover { border: 2px solid var(--gold); }
+        .slide-item img, .slide-item iframe { width: 100%; height: 250px; object-fit: cover; display: block; }
+
+        /* Adjust for vertical Facebook Reels */
+        #videoSlider .slide-item iframe { height: 550px; background: #000; }
+        
+        /* Slider Buttons */
+        .slide-btn {
+            background: var(--navy); color: var(--gold); border: 2px solid var(--gold);
+            font-size: 20px; width: 45px; height: 45px; border-radius: 50%;
+            cursor: pointer; position: absolute; z-index: 10; transition: 0.3s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .slide-btn:hover { background: var(--gold); color: var(--navy); }
+        .prev-btn { left: -22px; }
+        .next-btn { right: -22px; }
+
+        /* Contact Section & Visiting Card Info */
+        .contact { padding: 100px 20px; background: var(--white); text-align: center; }
+        .contact h2 { color: var(--navy); margin-bottom: 15px; font-size: 2.5rem; }
+        .contact > p { margin-bottom: 50px; color: #666; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .contact-container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; text-align: left; }
+        
+        /* Visiting Card Style Box */
+        .contact-info { 
+            background: var(--navy-light); color: var(--white); padding: 40px; 
+            border-radius: 8px; border-top: 4px solid var(--gold); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .contact-info h3 { color: var(--gold); margin-bottom: 25px; font-size: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;}
+        .contact-info p { margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; font-size: 1.05rem; line-height: 1.5; color: #ddd; }
+        .contact-info p strong { color: var(--white); display: block; margin-bottom: 3px; font-weight: 600;}
+        .contact-info i { color: var(--gold); font-size: 1.5rem; width: 30px; text-align: center; margin-top: 3px; }
+
+        form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; background: var(--bg-light); padding: 40px; border-radius: 8px; border: 1px solid #eee;}
+        .form-full { grid-column: span 2; }
+        input, select, textarea { 
+            width: 100%; padding: 15px; border-radius: 4px; border: 1px solid #ccc; 
+            font-family: 'Montserrat', sans-serif; font-size: 0.95rem; background: #fdfdfd; transition: 0.3s;
+        }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+        textarea { resize: vertical; }
+        
+        .contact-btn { grid-column: span 2; padding: 15px; font-size: 1.1rem; margin-top: 10px; }
+
+        /* Footer */
+        footer { padding: 40px 20px; text-align: center; background: #050914; color: #888; font-size: 0.9rem; }
+        .footer-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+        
+        .social-icons { margin-bottom: 25px; display: flex; justify-content: center; gap: 20px; }
+        .social-icons a { color: #ccc; font-size: 22px; transition: 0.3s; display: inline-block; }
+        .social-icons a:hover { color: var(--gold); transform: translateY(-3px); }
+
+        .disclaimer { margin-top: 20px; font-size: 0.8rem; color: #555; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000; transition: 0.3s; text-decoration: none;
+        }
+        .floating-whatsapp:hover {
+            transform: scale(1.1); background-color: #1ebe57; color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .slide-item { flex: 0 0 calc(50% - 10px); }
+            .hero h1 { font-size: 2.8rem; }
+            .contact-container { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .hero h1 { font-size: 2.2rem; }
+            .slide-item { flex: 0 0 100%; } 
+            .slide-btn { display: none; } 
+            form { grid-template-columns: 1fr; }
+            .form-full { grid-column: span 1; }
+            .contact-btn { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <header id="navbar">
+        <div class="logo">
+            <!-- Loaded custom Advocate Logo from Postimg -->
+            <img src="https://i.postimg.cc/DzpGkG9K/pngegg.png" alt="Advocate Logo">
+            P.M.Thirumalai <span>Thamizharasan</span>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact" class="btn-gold" style="padding: 8px 16px; color: var(--navy) !important;">Consult Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>P.M.Thirumalai Thamizharasan</h1>
+            <h3>M.L., B.B.A., D.C.T. | Advocate, Madras High Court</h3>
+            <p>Advocating with Integrity, Strategy, & Unwavering Excellence in Legal Matters.</p>
+            <div class="cta-group">
+                <a href="#about" class="btn-gold">Discover More</a>
+                <a href="#contact" class="btn-white">Contact via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <!-- Loaded Professional Portrait from Postimg -->
+                <img src="https://i.postimg.cc/3RPDWTrn/Whats-App-Image-2026-02-24-at-18-35-32.jpg" alt="Advocate P.M.Thirumalai Thamizharasan">
+            </div>
+            <div class="about-text">
+                <h2>About the Advocate</h2>
+                <p>With years of distinguished practice, Advocate P.M.Thirumalai Thamizharasan has built a stellar reputation for providing meticulous, aggressive, and highly strategic legal representation. Specializing in complex civil and criminal litigation, he is dedicated to protecting the rights and interests of his clients at every level of the judicial system.</p>
+                <p>His philosophy is rooted in a deep understanding of the law combined with a practical approach to problem-solving. Whether navigating high-stakes corporate disputes, property documentations, or sensitive family matters, he ensures absolute confidentiality, royal professionalism, and a relentless pursuit of justice.</p>
+                <br>
+                <a href="#" class="btn-gold" download>Download Full Profile (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Practice Areas</h2>
+        <p>Comprehensive legal solutions tailored to protect your personal and business interests with the highest degree of professionalism.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>⚖️ Criminal Law</h3>
+                <p>Expert defense and strategic representation in complex criminal matters, bail applications, trials, and appellate practice.</p>
+            </div>
+            <div class="card">
+                <h3>🏢 Corporate Law</h3>
+                <p>Strategic legal solutions for businesses, startup compliance, mergers, contract drafting, and regulatory adherence.</p>
+            </div>
+            <div class="card">
+                <h3>👨‍👩‍👧 Family Law</h3>
+                <p>Discreet and empathetic handling of matrimonial disputes, divorce proceedings, child custody, and family settlements.</p>
+            </div>
+            <div class="card">
+                <h3>📄 Property & Civil</h3>
+                <p>Title verification, deed drafting, property dispute resolution, and comprehensive civil litigation services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery (Scrolling Slider) -->
+    <section id="gallery" class="gallery-section bg-navy">
+        <h2>Court Moments & Events</h2>
+        <div class="slider-wrapper">
+            <button class="slide-btn prev-btn" onclick="slideGallery('photoSlider', -1)">&#10094;</button>
+            <div class="slider" id="photoSlider">
+                <!-- Live Postimg URLs for Event Photos -->
+                <div class="slide-item"><img src="https://i.postimg.cc/WzgqkHhL/Whats-App-Image-2026-02-24-at-18-35-35-(1).jpg" alt="Event Moment 1"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/gJf6rWk2/Whats-App-Image-2026-02-24-at-18-35-35-(2).jpg" alt="Event Moment 2"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/C5knqQzy/Whats-App-Image-2026-02-24-at-18-35-35.jpg" alt="Event Moment 3"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/KjB3MHRB/Whats-App-Image-2026-02-24-at-18-35-36-(1).jpg" alt="Event Moment 4"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/jq77mLZS/Whats-App-Image-2026-02-24-at-18-35-36.jpg" alt="Event Moment 5"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/GhnyCd5F/Whats-App-Image-2026-02-24-at-18-35-38.jpg" alt="Event Moment 6"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/021wsPBd/Whats-App-Image-2026-02-24-at-18-35-42-(1).jpg" alt="Event Moment 7"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/021wsPBd/Whats-App-Image-2026-02-24-at-18-35-42-(1).jpg" alt="Event Moment 8"></div>
+                <div class="slide-item"><img src="https://i.postimg.cc/kgf6K8X4/Whats-App-Image-2026-02-24-at-18-35-44.jpg" alt="Event Moment 9"></div>
+            </div>
+            <button class="slide-btn next-btn" onclick="slideGallery('photoSlider', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Video Gallery (Scrolling Slider) -->
+    <section class="gallery-section bg-navy-light">
+        <h2>Media & Insights</h2>
+        <div class="slider-wrapper">
+            <button class="slide-btn prev-btn" onclick="slideGallery('videoSlider', -1)">&#10094;</button>
+            <div class="slider" id="videoSlider">
+                <!-- Embedded Facebook Reels -->
+                <div class="slide-item">
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1CR6y9s7tS%2F&show_text=false" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="slide-item">
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1H6A8sgDbd%2F&show_text=false" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="slide-item">
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1AeVjjttGV%2F&show_text=false" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="slide-item">
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1BDBeQSSBk%2F&show_text=false" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
+            <button class="slide-btn next-btn" onclick="slideGallery('videoSlider', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Contact & WhatsApp Integration -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Contact us for a legal consultation, visit our office, or drop a message via WhatsApp.</p>
+        
+        <div class="contact-container">
+            <!-- Visiting Card Details Section -->
+            <div class="contact-info">
+                <h3>Office Information</h3>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> 
+                    <span>
+                        <strong>Office Address:</strong>
+                        Old no:14, New no: 6/1, Kennedy Second Street,<br>Mylapore, Chennai - 600 004 (Near Luz Church)
+                    </span>
+                </p>
+                <p>
+                    <i class="fas fa-phone-alt"></i> 
+                    <span>
+                        <strong>Contact Numbers:</strong>
+                        +91 99621 01000 (Mobile & WhatsApp)<br> 044-42187473 (Landline)
+                    </span>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> 
+                    <span>
+                        <strong>Email Addresses:</strong>
+                        kaya_advocate@yahoo.com<br>talktokayal@gmail.com
+                    </span>
+                </p>
+            </div>
+
+            <!-- WhatsApp Form Section -->
+            <form id="whatsappForm">
+                <input type="text" id="name" placeholder="Your Full Name" required>
+                <input type="tel" id="phone" placeholder="Mobile Number" required>
+                <input type="email" id="email" placeholder="Email Address (Optional)" class="form-full">
+                
+                <select id="service" class="form-full" required>
+                    <option value="" disabled selected>Select Type of Legal Service</option>
+                    <option value="Criminal Law">Criminal Law</option>
+                    <option value="Civil Law">Civil Law & Litigation</option>
+                    <option value="Corporate Law">Corporate Law & Contracts</option>
+                    <option value="Family Law">Family Law & Matrimonial</option>
+                    <option value="Property Law">Property & Real Estate Documentation</option>
+                    <option value="General Consultation">General Legal Consultation</option>
+                </select>
+
+                <textarea id="message" rows="4" class="form-full" placeholder="Briefly describe your legal requirement..." required></textarea>
+                
+                <button type="submit" class="btn-gold contact-btn">Send Inquiry via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919962101000" target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Practice Areas</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>&copy; 2026 Advocate P.M.Thirumalai Thamizharasan. All Rights Reserved.</p>
+        <p class="disclaimer">Disclaimer: Under the rules of the Bar Council of India, advocates are prohibited from soliciting work or advertising. By viewing this website, you acknowledge that there has been no advertisement, solicitation, or inducement of any sort whatsoever from us or any of our members to solicit any work through this website. The information provided is solely for educational and informational purposes.</p>
+    </footer>
+
+    <script>
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('navbar');
+            if(window.scrollY > 50) {
+                header.style.background = 'rgba(11, 19, 43, 1)';
+                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.4)';
+                header.style.padding = '15px 50px';
+            } else {
+                header.style.background = 'rgba(11, 19, 43, 0.95)';
+                header.style.boxShadow = 'none';
+                header.style.padding = '20px 50px';
+            }
+        });
+
+        // Gallery Slider Logic
+        function slideGallery(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const scrollAmount = slider.clientWidth / 3; 
+            slider.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        }
+
+        // WhatsApp Form Submission Logic
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value || 'Not provided';
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `*New Legal Inquiry*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Service Required:* ${service}\n\n*Message:*\n${message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappNumber = "919962101000"; // Replace with actual number
+            
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
